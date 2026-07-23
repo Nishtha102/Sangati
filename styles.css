@@ -235,9 +235,14 @@ textarea {
   display: grid;
   gap: clamp(28px, 5vw, 64px);
   align-items: center;
+  grid-template-areas:
+    "copy"
+    "photo"
+    "secondary";
 }
 
 .hero-copy {
+  grid-area: copy;
   max-width: 680px;
   color: var(--ink);
 }
@@ -317,6 +322,11 @@ strong {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 30px;
+}
+
+.hero-secondary {
+  grid-area: secondary;
+  max-width: 680px;
 }
 
 .hero-rating {
@@ -421,6 +431,7 @@ strong {
 }
 
 .hero-portrait {
+  grid-area: photo;
   position: relative;
   margin: 0;
   justify-self: stretch;
@@ -1142,6 +1153,9 @@ details p {
 
   .hero-grid {
     grid-template-columns: minmax(0, 50fr) minmax(360px, 50fr);
+    grid-template-areas:
+      "copy photo"
+      "secondary photo";
   }
 
   .hero-copy {
@@ -1334,18 +1348,30 @@ details p {
   }
 
   .credibility-card {
-    position: static;
-    display: grid;
-    grid-template-columns: 1fr;
-    margin-top: 12px;
-    padding: 14px;
-    font-size: max(var(--min-readable), calc(0.88rem - var(--font-reduce)));
+    display: none;
   }
 
-  .credibility-card span {
-    border-left: 0;
-    border-top: 1px solid var(--line);
-    padding: 10px 0 0;
+  .mentor-image {
+    display: none;
+  }
+
+  .trust-band {
+    border-bottom: 1px solid rgba(47, 42, 36, 0.14);
+  }
+
+  .trust-band .shell {
+    padding-inline: 16px;
+  }
+
+  .trust-grid article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #programs {
+    display: none;
   }
 
   .testimonial-shell {
